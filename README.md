@@ -21,7 +21,7 @@ yarn add unplugin-vue-setup-extend -D
 
 ```ts
 // vite.config.ts
-import vueSetupExtend from 'unplugin-vue-setup-extend/vite'
+import vueSetupExtend from '@winner-fed/unplugin-vue-setup-extend/vite'
 
 export default defineConfig({
   plugins: [
@@ -39,7 +39,7 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import vueSetupExtend from 'unplugin-vue-setup-extend/rollup'
+import vueSetupExtend from '@winner-fed/unplugin-vue-setup-extend/rollup'
 
 export default {
   plugins: [
@@ -59,7 +59,7 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-vue-setup-extend/webpack').default({ /* options */ })
+    require('@winner-fed/unplugin-vue-setup-extend/webpack').default({ /* options */ })
   ]
 }
 ```
@@ -73,7 +73,7 @@ module.exports = {
 // nuxt.config.js
 export default {
   buildModules: [
-    ['unplugin-vue-setup-extend/nuxt', { /* options */ }],
+    ['@winner-fed/unplugin-vue-setup-extend/nuxt', { /* options */ }],
   ],
 }
 ```
@@ -90,7 +90,7 @@ export default {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-vue-setup-extend/webpack').default({ /* options */ }),
+      require('@winner-fed/unplugin-vue-setup-extend/webpack').default({ /* options */ }),
     ],
   },
 }
