@@ -97,3 +97,63 @@ module.exports = {
 ```
 
 <br></details>
+ 
+## Note
+当 `script` 标签里不存在任何代码时，`@vue/compiler-sfc` 转换后的 `scriptSetup` 为 `null`，此种情况不支持转换。
+
+```javascript
+ const { parse, compileScript } = require("@vue/compiler-sfc");
+
+const { descriptor } = parse(
+`
+<template><h1>12312312</h1></template>
+<script setup name="App"></script>
+`
+);
+
+console.log(descriptor);
+
+```
+
+`descriptor` 转换后的结果如下：
+
+```javascript
+{
+  filename: 'anonymous.vue',
+  source: '\n' +
+    '  <template><h1>12312312</h1></template><script setup name="App"></script>\n',
+  template: {
+    type: 'template',
+    content: '<h1>12312312</h1>',
+    loc: { source: '<h1>12312312</h1>', start: [Object], end: [Object] },
+    attrs: {},
+    ast: {
+      type: 1,
+      ns: 0,
+      tag: 'template',
+      tagType: 0,
+      props: [],
+      isSelfClosing: false,
+      children: [Array],
+      loc: [Object],
+      codegenNode: undefined
+    },
+    map: {
+      version: 3,
+      sources: [Array],
+      names: [],
+      mappings: 'AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC',
+      file: 'anonymous.vue',
+      sourceRoot: '',
+      sourcesContent: [Array]
+    }
+  },
+  script: null,
+  scriptSetup: null,
+  styles: [],
+  customBlocks: [],
+  cssVars: [],
+  slotted: false,
+  shouldForceReload: [Function: shouldForceReload]
+}
+```
