@@ -1,6 +1,6 @@
 {
   "name": "@winner-fed/unplugin-vue-setup-extend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extending the vue script setup syntactic sugar",
   "keywords": [
     "unplugin",
